@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, Text, ActivityIndicator, StyleSheet } from 'react-native';
 
 
-const MenuScreen = (props) => {
+const HomeScreen = (props) => {
 
   return(
     <View >
-      <Text>Menu Screen</Text>
+      <Text>Register</Text>
+      <Text>List</Text>
+      <Text>Notifications</Text>
     </View>
   )
 }
 
 
 
-export default MenuScreen;
+export default HomeScreen;
