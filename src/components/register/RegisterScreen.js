@@ -3,10 +3,18 @@ import { View, FlatList, Text, ActivityIndicator, StyleSheet, Pressable } from '
 import { TextInput } from 'react-native-gesture-handler';
 
 import Storage from '../../libs/store';
+import Colors from '../../res/Colors';
 
 
 const RegisterScreen = ({ navigation }) => {
-  const [form, setForm] = useState({})
+  const [form, setForm] = useState({
+    name: null,
+    lastName: null,
+    email: null,
+    coach: null,
+    github: null,
+    cohort: null,
+  })
   const [dropDown, setDropDown] = useState(false)
 
   const handleCohort = (cohort) => {
@@ -29,68 +37,74 @@ const RegisterScreen = ({ navigation }) => {
   }
 
   return(
-    <View>
+    <View style={styles.container}>
       <TextInput 
       style={styles.textInput}
+      placeholderTextColor='#fc8621'
       onChangeText={(value) => setForm({ ...form, name: value})}
       placeholder='Nombre'
       />
       <TextInput 
       style={styles.textInput}
+      placeholderTextColor='#fc8621'
       onChangeText={(value) => setForm({ ...form, lastName: value})}
       placeholder='Apellidos'
       />
       <TextInput 
       style={styles.textInput}
+      placeholderTextColor='#fc8621'
       onChangeText={(value) => setForm({ ...form, email: value})}
       placeholder='Email'
       />
       <TextInput 
       style={styles.textInput}
+      placeholderTextColor='#fc8621'
       onChangeText={(value) => setForm({ ...form, coach: value})}
       placeholder='Coach'
       />
       <TextInput 
       style={styles.textInput}
+      placeholderTextColor='#fc8621'
       onChangeText={(value) => setForm({ ...form, github: value})}
       placeholder='Github'
       />
       <TextInput 
       style={styles.textInput}
+      placeholderTextColor='#fc8621'
       onChangeText={(value) => setForm({ ...form, cohort: value})}
       placeholder='Cohort'
       />
       <Pressable 
-        style={styles.btn}
+        style={dropDown ? [styles.dropDown] :[styles.dropDown, styles.marginBottom]}
         onPress={() => setDropDown(!dropDown)}
       > 
-        <Text style={styles.btnText}>Cohort</Text>
+        <Text style={styles.dropDownText}>{form.cohort ? `Cohort ${form.cohort}` : 'Cohort'}</Text>
       </Pressable>
       {dropDown ? 
         <View>
           <Pressable
-            style={styles.btn}
+            style={styles.dropDown}
             onPress={() => handleCohort(1)}
           >
-            <Text style={styles.btnText}>Cohort 1</Text>
+            <Text style={styles.dropDownText}>Cohort 1</Text>
           </Pressable>
           <Pressable
-            style={styles.btn}
+            style={styles.dropDown}
             onPress={() => handleCohort(2)}
           >
-            <Text style={styles.btnText}>Cohort 2</Text>
+            <Text style={styles.dropDownText}>Cohort 2</Text>
           </Pressable>
           <Pressable
-            style={styles.btn}
+            style={styles.dropDown}
             onPress={() => handleCohort(3)}
           >
-            <Text style={styles.btnText}>Cohort 3</Text>
+            <Text style={styles.dropDownText}>Cohort 3</Text>
           </Pressable>
           <Pressable
-            style={styles.btn}
+            style={styles.dropDown}
             onPress={() => handleCohort(4)}
           >
-            <Text style={styles.btnText}>Cohort 4</Text>
+            <Text style={styles.dropDownText}>Cohort 4</Text>
           </Pressable>
         </View>
         :
@@ -108,22 +122,48 @@ const RegisterScreen = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: Colors.primary,
+  },
   textInput: {
     height: 46,
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    marginHorizontal: 30,
+    backgroundColor: Colors.primary,
     paddingLeft: 16,
-    color: "#fff"
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.lightGreen,
+    color: Colors.primary,
+    margin: 10
   },
   btn: {
     padding: 8,
-    backgroundColor: 'blue',
+    backgroundColor: Colors.green,
     borderRadius: 8,
-    margin: 16
+    margin: 16,
+    marginHorizontal: '10%',
+    height: 50,
+    paddingVertical: 15
   },
   btnText: {
     color: '#fff',
     textAlign: 'center'
   },
+  dropDown: {
+    marginHorizontal: '30%',
+    borderWidth: 1,
+    borderColor: Colors.font,
+    marginTop: 1,
+    color: Colors.font,
+    backgroundColor: 'white'
+  },
+  dropDownText: {
+    color: Colors.font,
+    textAlign: 'left',
+    paddingLeft: 5,
+  },
+  marginBottom: {
+    marginBottom: 89
+  }
 });
 
 

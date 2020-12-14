@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, Text, ActivityIndicator, StyleSheet, Pressable } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import Colors from '../../res/Colors'
+import Storage from '../../libs/store'
 
 
 const NotificationDetails = ({ navigation, route }) => {
@@ -21,16 +23,17 @@ const NotificationDetails = ({ navigation, route }) => {
 
 
   return(
-    <View >
+    <View style={styles.container}>
       {edit ? 
       <>
         <View>
           <TextInput 
+            style={styles.title}
             value={notification.title}
             onChangeText={(text) => setNotification({...notification, title: text})}
           />
         </View>
-        <View>
+        <View style={styles.description}>
           <TextInput 
             value={notification.description}
             onChangeText={(text) => setNotification({...notification, title: text})}
@@ -40,21 +43,21 @@ const NotificationDetails = ({ navigation, route }) => {
       : 
       <>
         <View>
-          <Text>{notification.title}</Text>
+          <Text style={styles.title}>{notification.title}</Text>
         </View>
-        <View>
-          <Text>{notification.description}</Text>
+        <View style={styles.description}>
+          <Text >{notification.description}</Text>
         </View>
       </>
       }
-      <View>
-        <Pressable onPress={handleCreate}>
-          <Text>
+      <View style={styles.containerBtns}>
+        <Pressable style={styles.btnCreate} onPress={handleCreate}>
+          <Text style={styles.btnText}>
             crear
           </Text>
         </Pressable>
-        <Pressable onPress={edit ? handleEdit : () => setEdit(true)}>
-          <Text>
+        <Pressable style={styles.btnCreate} onPress={edit ? handleEdit : () => setEdit(true)}>
+          <Text style={styles.btnText}>
             {edit ? 'Save' : 'Edit'}
           </Text>
         </Pressable>
@@ -62,6 +65,41 @@ const NotificationDetails = ({ navigation, route }) => {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    height: '100%',
+    backgroundColor: Colors.primary,
+    paddingHorizontal: '10%',
+    paddingTop: '20%',
+  },
+  title: {
+    fontSize: 22,
+    color: Colors.font,
+    marginBottom: 10,
+  },
+  description: {
+    minHeight: 300,
+  },
+  containerBtns: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  btnCreate: {
+    width: 60,
+    height: 30,
+    backgroundColor: Colors.green,
+    borderRadius: 3,
+    paddingVertical: 5,
+    marginTop: 20
+  },
+  btnText: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center'
+  }
+})
+
 
 
 export default NotificationDetails;

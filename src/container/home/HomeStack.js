@@ -7,11 +7,22 @@ import NotificationsScreen from '../../components/notifications/NotificationsScr
 import NotificationCreate from '../../components/notifications/NotificationCreate';
 import NotificationDetails from '../../components/notifications/NotificationDetails';
 
+import Colors from '../../res/Colors';
+
 const Stack = createStackNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator 
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: Colors.primary,
+          shadowColor: Colors.primary,
+        },
+        headerTitleAlign: 'center',
+        headerTintColor: Colors.font,
+      }}
+    >
       <Stack.Screen name='Home' component={HomeScreen} />
       <Stack.Screen name='Register' component={RegisterScreen} />
       <Stack.Screen name='List' component={ListScreen} />

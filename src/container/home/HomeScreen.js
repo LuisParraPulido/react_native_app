@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, Text, ActivityIndicator, StyleSheet, Pressable } from 'react-native';
-
+import Colors from '../../res/Colors';
 
 
 const HomeScreen = ({ navigation }) => {
@@ -37,7 +37,10 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: Colors.primary,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   },
   titleText: {
     color: '#fff',
@@ -45,13 +48,18 @@ const styles = StyleSheet.create({
   },
   btn: {
     padding: 8,
-    backgroundColor: 'blue',
-    borderRadius: 8,
-    margin: 16
+    backgroundColor: Colors.green,
+    borderRadius: 3,
+    margin: 16,
+    width: 150,
+    height:70,
+    textAlign: 'center',
+    paddingTop: 20
   },
   btnText: {
     color: '#fff',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 18,
   },
   loading: {
     marginTop: 60,
