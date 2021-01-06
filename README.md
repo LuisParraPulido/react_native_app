@@ -16,4 +16,12 @@ Crear una plataforma para los estudiantes de Platzi Master que les permita reali
 
 ### APP
 
-![UI]()
+![UI](https://github.com/LuisParraPulido/react_native_app/blob/main/src/assets/home.jpeg)
+![UI](https://github.com/LuisParraPulido/react_native_app/blob/main/src/assets/list.jpeg)
+![UI](https://github.com/LuisParraPulido/react_native_app/blob/main/src/assets/search.jpeg)
+![UI](https://github.com/LuisParraPulido/react_native_app/blob/main/src/assets/register.jpeg)
+![UI](https://github.com/LuisParraPulido/react_native_app/blob/main/src/assets/notifications.jpeg)
+![UI](https://github.com/LuisParraPulido/react_native_app/blob/main/src/assets/create.jpeg)
+![UI](https://github.com/LuisParraPulido/react_native_app/blob/main/src/assets/createNotification.jpeg)
+![UI](https://github.com/LuisParraPulido/react_native_app/blob/main/src/assets/listNotifications.jpeg)
+![UI](https://github.com/LuisParraPulido/react_native_app/blob/main/src/assets/view.jpeg)
