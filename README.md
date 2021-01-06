@@ -13,3 +13,7 @@ Crear una plataforma para los estudiantes de Platzi Master que les permita reali
 - Los Cohorts deben resaltarse por colores (Deben ser diferentes)
 - Dicho listado debe poderse filtrar por Cohort y adicional debe permitir realizar una búsqueda por nombre y apellido de estudiantes. Los resultados a esta búsqueda no necesitan ser presentados en agrupamiento. Si el usuario quita el filtro y la información de búsqueda, debe volver al listado principal agrupado por Cohort.
 - Ademas la aplicación deberá tener una sesión en donde tenga un CRUD de avisos y que dichos avisos se puedan programar para la fecha deseada y mostrarse en "La pantalla principal de avisos" y adicionalmente deberá generales un push notificación a los integrantes de la App
+
+### APP
+
+![UI]()
